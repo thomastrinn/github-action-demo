@@ -7,11 +7,6 @@ on:
         - 'whoami/**'
     workflow_dispatch:
 
-env:
-    HOST: ${{ secrets.HOST }}
-    USERNAME: ${{ secrets.USERNAME }}
-    REMOTE_DIR: ${{ secrets.REMOTE_DIR }}
-
 jobs:
     deploy:
         runs-on: self-hosted
@@ -22,7 +17,8 @@ jobs:
             
             - name: Deploy
               run: |
-                rsync -avz --del whoami $USERNAME@$HOST:$REMOTE_DIR/
-                ssh $USERNAME@$HOST "\
-                    cd $REMOTE_DIR/whoami && \
-                    docker compose up -d --force-recreate"
+                rsync -avz --del whoami ${{ secrets.HOST }}:${{ secrets.REMOTE_DIR }}/
+                ssh ${{ secrets.HOST }} "\
+                    cd ${{ secrets.REMOTE_DIR }}/whoami && \
+                    docker compose up -d --force-recreate \
+                    "
