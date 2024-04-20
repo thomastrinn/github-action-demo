@@ -1,0 +1,21 @@
+name: Deploy Whoami
+
+on:
+    push:
+        branches: [ "main" ]
+        paths:
+        - 'whoami/**'
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Validate
+              run: |
+                cd whoami
+                docker-compose config
