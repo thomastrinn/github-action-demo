@@ -1,5 +1,5 @@
-version: '3'
-name: whoami
+version: '3.3'
+
 services:
   whoami:
     image: traefik/whoami:v1.9
