@@ -23,4 +23,6 @@ jobs:
             - name: Deploy
               run: |
                 rsync -avz --del whoami $USERNAME@$HOST:$REMOTE_DIR/
-                ssh $USERNAME@$HOST "cd $REMOTE_DIR/whoami && docker compose up -d --force-recreate"
+                ssh $USERNAME@$HOST "\
+                    cd $REMOTE_DIR/whoami && \
+                    docker compose up -d --force-recreate"
