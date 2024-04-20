@@ -18,4 +18,4 @@ jobs:
             - name: Validate
               run: |
                 cd whoami
-                docker-compose config --quiet && printf "Valid\n" || printf "ERROR\n"
+                docker-compose config --quiet && printf "Valid\n"
