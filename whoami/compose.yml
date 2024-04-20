@@ -1,6 +1,6 @@
 version: '3.3'
 
-services:
+service:
   whoami:
     image: traefik/whoami:v1.9
     ports:
