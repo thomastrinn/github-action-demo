@@ -19,4 +19,6 @@ jobs:
               run: cd whoami && docker compose config --quiet
             
             - name: Deploy
-              run: echo "Deploying Whoami"
+              run: |
+                scp -r whoami/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.REMOTE_DIR }}/whoami
+                ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd ${{ secrets.REMOTE_DIR }}/whoami && docker compose up -d"
