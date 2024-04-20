@@ -1,5 +1,4 @@
 name: whoami
-
 services:
   whoami:
     image: traefik/whoami:v1.9
