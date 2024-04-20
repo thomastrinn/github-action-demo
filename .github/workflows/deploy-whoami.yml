@@ -20,5 +20,5 @@ jobs:
             
             - name: Deploy
               run: |
-                scp -r whoami/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.REMOTE_DIR }}/whoami
-                ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd ${{ secrets.REMOTE_DIR }}/whoami && docker compose up -d"
+                rsync -avz --del whoami ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.REMOTE_DIR }}/
+                ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd ${{ secrets.REMOTE_DIR }}/whoami && docker compose up -d --force-recreate"
