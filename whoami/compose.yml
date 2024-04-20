@@ -1,0 +1,5 @@
+name: whoami
+
+services:
+  whoami:
+    image: traefik/whoami
