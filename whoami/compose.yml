@@ -2,6 +2,6 @@ name: whoami
 
 services:
   whoami:
-    image: traefik/whoami:v1.9
+    image: traefik/whoami:v1.10
     ports:
       - 8011:80
