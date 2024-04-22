@@ -5,6 +5,12 @@
     ":prConcurrentLimitNone",
     ":prHourlyLimitNone"
   ],
+  "assignees": ["@thomastrinn"],
   "separateMinorPatch": true,
-  "separateMultipleMajor": true
+  "separateMultipleMajor": true,
+  "vulnerabilityAlerts": {
+      "labels": ["security"],
+      "automerge": true,
+      "assignees": ["@thomastrinn"]
+  }
 }
