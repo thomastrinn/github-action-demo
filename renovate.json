@@ -8,6 +8,7 @@
   "assignees": ["@thomastrinn"],
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
+  "separateMultipleMinor": true,
   "vulnerabilityAlerts": {
       "labels": ["security"],
       "automerge": true,
